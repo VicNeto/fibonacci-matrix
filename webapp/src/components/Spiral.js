@@ -21,7 +21,7 @@ export class Spiral extends Component {
         const cols = this.state.columns;
         axios.get(`${process.env.REACT_APP_API_URL}/spiral?rows=${rows}&cols=${cols}`)
             .then(resp => this.setState({
-                spiral: resp.data,
+                spiral: resp.data?.rows,
             }))
             .catch(err => console.log(err));
     }

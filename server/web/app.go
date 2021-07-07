@@ -41,12 +41,12 @@ func (a *App) GetSpiral(w http.ResponseWriter, r *http.Request) {
 	rows := parseQueryParam(rowStr)
 	colStr := query["cols"]
 	cols := parseQueryParam(colStr)
-	technologies, err := service.FibonnaciSpiral(rows, cols)
+	spiral, err := service.FibonnaciSpiral(rows, cols)
 	if err != nil {
 		sendErr(w, http.StatusInternalServerError, err.Error())
 		return
 	}
-	err = json.NewEncoder(w).Encode(technologies)
+	err = json.NewEncoder(w).Encode(map[string]interface{}{"rows": spiral})
 	if err != nil {
 		sendErr(w, http.StatusInternalServerError, err.Error())
 	}
