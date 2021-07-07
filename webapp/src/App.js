@@ -4,7 +4,7 @@ import {Spiral} from "./components/Spiral";
 
 export function App() {
     return (
-        <div className="container w-screen">
+        <div className="">
             <p className="text-5x1">Fibonnaci Spiral</p>
             <br/>
             <div>

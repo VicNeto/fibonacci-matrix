@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-func FibonnaciSpiralTest(t *testing.T) {
+func TestFibonnaciSpiral(t *testing.T) {
 	cases := []struct {
 		rows   int
 		cols   int
@@ -20,11 +20,10 @@ func FibonnaciSpiralTest(t *testing.T) {
 	for _, c := range cases {
 		a, err := FibonnaciSpiral(c.rows, c.cols)
 		if err != nil {
-			// t.Fatalf(“error should be nil”)
+			t.Errorf("error should be nil")
 			t.Fail()
 		}
 		if !reflect.DeepEqual(a, c.spiral) {
-			// t.Log(“error should be”+expected+”, but got”,str)
 			t.Fail()
 		}
 	}

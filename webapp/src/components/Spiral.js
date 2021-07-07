@@ -30,7 +30,7 @@ export class Spiral extends Component {
         return (
             <tr key={i} className="bg-emerald-200">
                 {row?.map((number, j) => 
-                    <td key={j} className="w-1/12 border border-green-600">
+                    <td key={j} className=" border border-green-600">
                         <p className="px-1">{number}</p>
                     </td>)}
             </tr>
